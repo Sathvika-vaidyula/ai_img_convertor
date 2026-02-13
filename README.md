@@ -1,4 +1,4 @@
-# Interactive-AI-Image-Generator
+# AI-Image-Generator
 
 ## Overview
 
@@ -127,7 +127,7 @@ ai-image-generator/
 ## Screenshot Preview
 
 <p align="center">
-  <img src="static/screenshot.png" width="800">
+  <img src="static/Screenshot.png" width="800">
 </p>
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
