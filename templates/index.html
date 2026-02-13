@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>AI Image Generator</h1>
+
+    <form id="imageForm">
+        <input type="text" id="prompt" placeholder="Describe your imagination..." required>
+        <button type="submit">Generate Image</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+document.getElementById("imageForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const prompt = document.getElementById("prompt").value;
+
+    document.getElementById("result").innerHTML =
+        `<div class="loader"></div>`;
+
+    const response = await fetch("/generate", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "prompt=" + encodeURIComponent(prompt)
+    });
+
+    const data = await response.json();
+
+    if (data.error) {
+        document.getElementById("result").innerHTML =
+            `<p class="error">${data.error}</p>`;
+        return;
+    }
+
+    const imgSrc = "data:image/png;base64," + data.image;
+
+    document.getElementById("result").innerHTML = `
+        <img src="${imgSrc}">
+        <a href="${imgSrc}" download="generated.png">Download Image</a>
+    `;
+});
+</script>
+
+</body>
+</html>
