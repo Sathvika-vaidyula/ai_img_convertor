@@ -1,59 +1,117 @@
- AI Image Generator
-Overview
+# Interactive-AI-Image-Generator
 
- AI Image Generator is a web application that allows users to generate images from text prompts using the Hugging Face Inference API.
+## Overview
 
-Users can:
+The AI Image Generator is a web application that allows users to generate images based on text prompts using the Hugging Face Inference API. Users can enter their prompts, view the generated images, and download them directly from the application.
 
-Enter a text prompt
+The application features a clean, modern user interface with smooth animations for an enhanced user experience.
 
-Generate AI-powered images
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-View results instantly
+## Features
 
-Download generated images
+- Text-to-Image Generation: Generates AI-powered images based on user-provided prompts.
+- Fast API Integration: Integrated with the Hugging Face Inference API.
+- Image Download: Option to download the generated image.
+- Dynamic Background Animation: Gradient animations for improved user experience.
+- Responsive UI: Works across different screen sizes.
+- Secure API Handling: API keys managed securely using environment variables.
 
-The application features a clean, modern UI with smooth animations for an enhanced user experience.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- Features
+## Tech Stack
 
- Text-to-Image Generation using Hugging Face models
+- Backend: Flask (Python)
+- Frontend: HTML, CSS, JavaScript
+- API Integration: Hugging Face Inference API
 
- Fast API Integration with Hugging Face Inference API
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- Download Generated Images
+## Prerequisites
 
- Dynamic Gradient Background Animation
+Before you begin, ensure you have the following:
 
- Responsive and Interactive UI
+- Python 3.7 or later installed
+- pip installed
+- Hugging Face API token
+- Required dependencies (listed in requirements.txt)
 
- Secure API Key Handling using Environment Variables
 
-Tech Stack
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Backend
+## Installation
 
-Python
+### 1. Clone the Repository
 
-Flask
+```bash
+git clone https://github.com/Sathvika-vaidyula/ai_img_convertor.git
+cd ai_img_convertor
+```
 
-Frontend
+### 2. Create a Virtual Environment (Recommended)
 
-HTML
+```bash
+python -m venv venv
+```
 
-CSS
+Activate the environment:
 
-JavaScript
+**Windows**
+```bash
+venv\Scripts\activate
+```
 
-API
+**Mac/Linux**
+```bash
+source venv/bin/activate
+```
 
-Hugging Face Inference API
+### 3. Install Dependencies
 
- Project Structure
+```bash
+pip install -r requirements.txt
+```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Configuration
+
+Create a `.env` file in the root directory and add your Hugging Face API token:
+
+```
+HF_TOKEN=your_huggingface_api_token_here
+```
+
+Do not hardcode your API key in `app.py`. The application securely loads the token using environment variables.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Running the Application
+
+Start the Flask development server:
+
+```bash
+python app.py
+```
+
+Open your browser and navigate to:
+
+```
+http://127.0.0.1:5000
+```
+
+Enter a prompt and generate AI images instantly.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Project Structure
+
+```
 ai-image-generator/
 │
 ├── static/
-│   └── styles.css
+│   ├── styles.css
+│   └── screenshot.png
 │
 ├── templates/
 │   └── index.html
@@ -62,116 +120,46 @@ ai-image-generator/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
- Prerequisites
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Before running the project, make sure you have:
+## Screenshot Preview
 
-Python 3.7+
+<p align="center">
+  <img src="static/screenshot.png" width="800">
+</p>
 
-pip installed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Hugging Face API token
+## Contributing
 
- Installation
-1️⃣ Clone the Repository
-git clone https://github.com/Sathvika-vaidyula/ai_img_convertor.git
-cd ai_img_convertor
+Contributions are welcome.
 
-2️⃣ Create Virtual Environment (Recommended)
-python -m venv venv
+1. Fork the repository  
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add feature-name"
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Create a Pull Request  
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Activate:
-
-Windows
-
-venv\Scripts\activate
-
-
-Mac/Linux
-
-source venv/bin/activate
-
-3️⃣ Install Dependencies
-pip install -r requirements.txt
-
- Configuration (IMPORTANT)
-
-Create a .env file in the root directory:
-
-HF_TOKEN=your_huggingface_api_token_here
-
-
-Never hardcode your API key in app.py.
-
-The application securely loads the token using environment variables.
-
-▶️ Running the Application
-
-Start the Flask server:
-
-python app.py
-
-
-Open your browser:
-
-http://127.0.0.1:5000
-
-
-Enter a prompt and generate images 
-
- requirements.txt
-
-If missing, generate using:
-
-pip freeze > requirements.txt
-
- Contributing
-
-Contributions are welcome!
-
-Fork the repository
-
-Create a new branch
-
-git checkout -b feature-name
-
-
-Commit your changes
-
-git commit -m "Add feature-name"
-
-
-Push to your branch
-
-git push origin feature-name
-
-
-Create a Pull Request
-
- License
+## License
 
 This project is licensed under the MIT License.
 
-Acknowledgements
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Hugging Face for providing the Inference API
+## Author
 
-Flask Documentation
-
-Open-source community
-
-Author
-
-Sathvika Vaidyula
-
+Sathvika Vaidyula  
 GitHub: https://github.com/Sathvika-vaidyula
-
-
-
-Live Deployment instructions
-
-Screenshot preview section
-
-Portfolio-style formatting
